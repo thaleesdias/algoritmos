@@ -1,18 +1,19 @@
 package main
 
 import (
-	"algoritmos/leetcode"
+	"algoritmos/busca"
 	"fmt"
-	"os"
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Println("Uso: go run main.go \"frase para inverter\"")
-		return
-	}
 
-	input := os.Args[1]
-	result := leetcode.ReverseEachWord(input)
-	fmt.Println("Resultado:", result)
+	valores := [11]int{1, 3, 5, 6, 8, 13, 14, 15, 16, 22, 25}
+
+	pos := busca.Binary_Search(valores, 14)
+
+	if pos != -1 {
+		fmt.Printf("Valor encontrado na posição %d\n", pos)
+	} else {
+		fmt.Println("Valor não encontrado")
+	}
 }
