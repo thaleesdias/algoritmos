@@ -2,7 +2,7 @@ package busca
 
 import "fmt"
 
-func Binary_Search(arr [11]int, alvo int) int {
+func Binary_Search(arr []int, alvo int) int {
 
 	inicio := 0
 	fim := len(arr) - 1
