@@ -1,19 +1,27 @@
 package main
 
 import (
-	"algoritmos/busca"
+	linkedlist "algoritmos/linkedList"
 	"fmt"
 )
 
 func main() {
 
-	valores := []int{1, 3, 5, 6, 8, 13, 14, 15, 16, 22, 25}
+	list := linkedlist.DoublyLinkedList{}
 
-	pos := busca.Binary_Search(valores, 25)
+	list.AddLast(10)
+	list.AddLast(20)
+	list.AddFirst(5)
 
-	if pos != -1 {
-		fmt.Printf("Valor encontrado na posição %d\n", pos)
-	} else {
-		fmt.Println("Valor não encontrado")
-	}
+	fmt.Println("Lista normal:")
+	list.PrintForward() // 5 <-> 10 <-> 20 <-> nil
+
+	fmt.Println("Lista reversa:")
+	list.PrintBackward() // 20 <-> 10 <-> 5 <-> nil
+
+	list.RemoveFirst()
+	list.RemoveLast()
+
+	fmt.Println("Depois de remover:")
+	list.PrintForward() // 10 <-> nil
 }
